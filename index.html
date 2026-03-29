@@ -1,216 +1,761 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEAM Boostrap</title>
+    <title>Steam Clone - 12 Juegos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Colores oficiales de Steam */
+        :root {
+            --steam-dark-blue: #171a21;
+            --steam-body-bg: #1b2838;
+            --steam-nav-secondary: #2a475e;
+            --steam-blue-btn: #5c7e10;
+            /* Color del botón Instalar */
+        }
 
+        body {
+            background-color: var(--steam-body-bg) !important;
+            font-family: "Motiva Sans", Sans-serif;
+        }
 
+        .navbar-main {
+            background-color: var(--steam-dark-blue);
+            font-size: 14px;
+        }
+
+        .nav-link-main {
+            color: #b8b6b4 !important;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 10px 15px !important;
+        }
+
+        .nav-link-main:hover {
+            color: #ffffff !important;
+        }
+
+        /* Barra de instalación y login */
+        .top-right-nav .nav-link {
+            font-size: 11px;
+            color: #b8b6b4 !important;
+            padding: 2px 8px !important;
+        }
+
+        .btn-install {
+            background-color: #5c7e10;
+            color: white !important;
+            font-size: 11px !important;
+            padding: 4px 12px !important;
+            border-radius: 2px;
+        }
+
+        /* Barra secundaria de exploración */
+        .sub-nav {
+            background: linear-gradient(90deg, rgba(62, 103, 150, 0.91) 0%, rgba(58, 120, 177, 0.8) 100%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sub-nav .nav-link {
+            color: #fff !important;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
-<body>
+<body class="text-light">
 
-    <header>
-        <nav class="navbar bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top">
-                    STEAM
+    <header class="navbar-main shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center fw-bold me-4" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Logo"
+                        width="35" height="35" class="me-2">
+                    <span style="letter-spacing: 2px; color: #d5d5d5;">STEAM</span>
                 </a>
+                <ul class="nav d-none d-lg-flex">
+                    <li class="nav-item"><a class="nav-link nav-link-main" href="#">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-main" href="#">Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-main" href="#">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-main" href="#">Soporte</a></li>
+                </ul>
             </div>
-        </nav>
+
+            <div class="top-right-nav d-flex align-items-center">
+                <a href="#" class="nav-link btn-install me-2"><i class="bi bi-download"></i> Instalar Steam</a>
+                <a href="#" class="nav-link">iniciar sesión</a>
+                <span class="text-secondary mx-1">|</span>
+                <a href="#" class="nav-link">idioma</a>
+            </div>
+        </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Explorar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Recomendaciones
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Categorias
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Hardware
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Formas de jugar
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Miscelánea
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar en la tienda"
-                        aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+    <nav class="sub-nav mb-4">
+        <div class="container">
+            <ul class="nav justify-content-start py-1">
+                <li class="nav-item"><a class="nav-link" href="#">Tu tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Nuevo y destacable</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Tienda de puntos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Laboratorios</a></li>
+                <li class="nav-item ms-auto pt-1">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control bg-dark text-light border-0" placeholder="buscar"
+                            style="font-size: 12px; width: 150px;">
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <main>
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+    <main class="container my-4">
+        <section class="mb-5">
+            <h5 class="text-uppercase mb-3" style="letter-spacing: 2px;">Destacados y recomendados</h5>
+
+            <div id="steamCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="5"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="6"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="7"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="8"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="9"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="10"></button>
+                    <button type="button" data-bs-target="#steamCarousel" data-bs-slide-to="11"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1767883716"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Elden Ring</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg?t=1767883716"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.1920x1080.jpg?t=1767883716"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_3c41384a24d86dddd58a8f61db77f9dc0bfda8b5.1920x1080.jpg?t=1767883716"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_e0316c76f8197405c1312d072b84331dd735d60b.1920x1080.jpg?t=1767883716"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Ya disponible</p>
+                                    <div class="badge bg-secondary">Lo más vendido</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">59,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/8474e0475ea726bdb9aa1c55a5bc599ba0c214e0/header_alt_assets_10.jpg?t=1773250266"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>DIablo IV</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/11d4a9be127719b22681d823b83b0c6b4798bf1f/ss_11d4a9be127719b22681d823b83b0c6b4798bf1f.1920x1080.jpg?t=1773250266"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/ee4b4e1ba9c8a07f40aff563c7c43fd04477d60c/ss_ee4b4e1ba9c8a07f40aff563c7c43fd04477d60c.1920x1080.jpg?t=1773250266"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/73d3413a15dcde01592a1e8e3c998ec128ef9676/ss_73d3413a15dcde01592a1e8e3c998ec128ef9676.1920x1080.jpg?t=1773250266"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/14880a1527241507d9a2d26f439f83fac20c4246/ss_14880a1527241507d9a2d26f439f83fac20c4246.1920x1080.jpg?t=1773250266"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Oferta especial</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">-25%</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">29,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1749053861"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Counter-Strike 2</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_796601d9d67faf53486eeb26d0724347cea67ddc.1920x1080.jpg?t=1749053861"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_13bb35638c0267759276f511ee97064773b37a51.1920x1080.jpg?t=1749053861"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_0f8cf82d019c614760fd20801f2bb4001da7ea77.1920x1080.jpg?t=1749053861"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_808cdd373d78c3cf3a78e7026ebb1a15895e0670.1920x1080.jpg?t=1749053861"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">Free to play</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1759502961"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Red Dead Redemption 2</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.jpg?t=1759502961"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/ss_bac60bacbf5da8945103648c08d27d5e202444ca.1920x1080.jpg?t=1759502961"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.1920x1080.jpg?t=1759502961"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/ss_4ce07ae360b166f0f650e9a895a3b4b7bf15e34f.1920x1080.jpg?t=1759502961"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Oferta especial</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">-75%</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">14,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1765479644"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Grand Theft Auto V Enhanced</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/d61184a98c1cf2db2b08b2999c04b0519e3615bb/ss_d61184a98c1cf2db2b08b2999c04b0519e3615bb.1920x1080.jpg?t=1765479644"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/8340fd391012e12be7e4c02e65801a2648a6b60e/ss_8340fd391012e12be7e4c02e65801a2648a6b60e.1920x1080.jpg?t=1765479644"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/f2e70b5823510daa062293ff0b03821e1dee2d37/ss_f2e70b5823510daa062293ff0b03821e1dee2d37.1920x1080.jpg?t=1765479644"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3240220/0231bf16835cd4f6d83523d76aa8d91cb2dfef9b/ss_0231bf16835cd4f6d83523d76aa8d91cb2dfef9b.1920x1080.jpg?t=1765479644"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Oferta especial</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">-50%</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">14,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/48a2fcbda8565bb45025e98fd8ebde8a7203f6a0/header.jpg?t=1773079016"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Baldur's Gate 3</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_c73bc54415178c07fef85f54ee26621728c77504.1920x1080.jpg?t=1773079016"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_73d93bea842b93914d966622104dcb8c0f42972b.1920x1080.jpg?t=1773079016"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_cf936d31061b58e98e0c646aee00e6030c410cda.1920x1080.jpg?t=1773079016"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_b6a6ee6e046426d08ceea7a4506a1b5f44181543.1920x1080.jpg?t=1773079016"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Ya disponible</p>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">59,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2114740/header.jpg?t=1763037082"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Blasphemous II</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2114740/ss_08bf3eb43590566cc39cde50fff8305026b3d569.1920x1080.jpg?t=1763037082"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2114740/ss_06ae2ee0a20de1d4c698ff247c7b2d1caa4dfd08.1920x1080.jpg?t=1763037082"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2114740/ss_f08d74f176b7d877966403d5f51f450344183ddc.1920x1080.jpg?t=1763037082"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2114740/ss_be5dd1ea7e6bb394dbff7f77932b8b2bba33e042.1920x1080.jpg?t=1763037082"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Oferta especial</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">-67%</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">9,89€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/e337830aa9314003f23d6630f00304bd815bf673/header_alt_assets_3.jpg?t=1772007651"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>ARC Riders</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/1763664f3ea80080867eafa751685b7feec950c8/ss_1763664f3ea80080867eafa751685b7feec950c8.1920x1080.jpg?t=1772007651"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/5188aa2b07920afe9753409ea9fe3d1324cfc294/ss_5188aa2b07920afe9753409ea9fe3d1324cfc294.1920x1080.jpg?t=1772007651"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/cb49dfbcd7175c86e297b35ffc54cf779708f0ae/ss_cb49dfbcd7175c86e297b35ffc54cf779708f0ae.1920x1080.jpg?t=1772007651"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/0b1fa1294fa269633112be2c3d8758df42baebe1/ss_0b1fa1294fa269633112be2c3d8758df42baebe1.1920x1080.jpg?t=1772007651"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Oferta especial</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">-20%</div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">31,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/d0fbd193f4a68c7563ae47ab3322d08f184633f9/header.jpg?t=1774000818"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Marvel Rivals</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/6b131db0a7190b40f0c1305a05bdc2b6a1daea32/ss_6b131db0a7190b40f0c1305a05bdc2b6a1daea32.1920x1080.jpg?t=1774000818"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/9c62d5330eab8df3a2c76e68662767bf68d755c2/ss_9c62d5330eab8df3a2c76e68662767bf68d755c2.1920x1080.jpg?t=1774000818"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/f2e75daef3f7177d896409b6dd69b62e4088dc23/ss_f2e75daef3f7177d896409b6dd69b62e4088dc23.1920x1080.jpg?t=1774000818"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/d0c9586eb84af49eb038a402e221a8244331c043/ss_d0c9586eb84af49eb038a402e221a8244331c043.1920x1080.jpg?t=1774000818"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">Free to play</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/ce5437442768e38eb575f205ab9397d0264017b0/header.jpg?t=1772587704"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Resident Evil Requiem</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/08af4e9398b8e45152bfbedce3bc24d22e2c0990/ss_08af4e9398b8e45152bfbedce3bc24d22e2c0990.1920x1080.jpg?t=1772587704"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/4921eb5fb45f6b7a3b62195e47c6d7b4175935a8/ss_4921eb5fb45f6b7a3b62195e47c6d7b4175935a8.1920x1080.jpg?t=1772587704"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/e7b791b703759aebe774b813eb29a364008552b8/ss_e7b791b703759aebe774b813eb29a364008552b8.1920x1080.jpg?t=1772587704"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/bbe5c4e0ba4fc551d9389cf2411c2cefe413af1d/ss_bbe5c4e0ba4fc551d9389cf2411c2cefe413af1d.1920x1080.jpg?t=1772587704"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Ya disponible</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">Los más vendido
+                                    </div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">69,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3321460/abd7dbdeaede8b6c9a6d40bf116ff2b883f2dd45/header.jpg?t=1774506236"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Crimson Desert</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3321460/669119c3747653f41a46c59f213168448d094e04/ss_669119c3747653f41a46c59f213168448d094e04.1920x1080.jpg?t=1774506236"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3321460/4b178bdd24ed576458116d8d3383b5352dad0fae/ss_4b178bdd24ed576458116d8d3383b5352dad0fae.1920x1080.jpg?t=1774506236"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3321460/55e514af688f459364b3d0ffb288faf73580c8e5/ss_55e514af688f459364b3d0ffb288faf73580c8e5.1920x1080.jpg?t=1774506236"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3321460/d889c95c5f37b3a081cc7be68daf4ad2ffb9e291/ss_d889c95c5f37b3a081cc7be68daf4ad2ffb9e291.1920x1080.jpg?t=1774506236"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Ya disponible</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">Lo más vendido
+                                    </div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">69,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-0" style="background-color: #0f1922;">
+                            <div class="col-md-8">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1754692865"
+                                    class="img-fluid w-100 h-100" style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-4 p-4 d-none d-md-flex flex-column justify-content-between">
+                                <div>
+                                    <h3>Stardew Valley</h3>
+                                    <div class="row g-2 mt-2">
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.1920x1080.jpg?t=1754692865"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_9ac899fe2cda15d48b0549bba77ef8c4a090a71c.1920x1080.jpg?t=1754692865"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_4fa0866709ede3753fdf2745349b528d5e8c4054.1920x1080.jpg?t=1754692865"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                        <div class="col-6"><img
+                                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_d836f0a5b0447fb6a2bdb0a6ac5f954949d3c41e.1920x1080.jpg?t=1754692865"
+                                                class="img-fluid" style="aspect-ratio:16/9; object-fit:cover;"></div>
+                                    </div>
+                                    <p class="text-secondary small mt-3">Ya disponible</p>
+                                    <div class="bg-success text-white d-inline-block px-2 py-1 fw-bold">Lo más vendido
+                                    </div>
+                                </div>
+                                <div class="mt-4"><span class="fs-4">13,99€</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#steamCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#steamCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
+        </section>
 
-            <div class="carousel-inner p-5">
-                <div class="carousel-item active">Destacados y Recomendados
-                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3527290/31bac6b2eccf09b368f5e95ce510bae2baf3cfcd/header.jpg?t=1773856924"
-                        class="d-block w-100" alt="...">
+        <section class="mb-5">
+            <h5 class="text-uppercase mb-3" style="letter-spacing: 2px; font-size: 14px; color: #fff;">Ofertas
+                especiales</h5>
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100" style="background-color: #2a475e;">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/header.jpg"
+                            class="card-img-top" alt="Hades">
+                        <div class="card-body p-3">
+                            <h6 class="card-title text-white">Hades II</h6>
+                            <p class="small text-secondary mb-2">Oferta de mitad de semana</p>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-success text-white px-2 py-1 fw-bold me-2">-50%</div>
+                                <div class="text-secondary text-decoration-line-through small me-2">28,99€</div>
+                                <div class="fs-5 text-white">14,49€</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/ad9240e088f953a84aee814034c50a6a92bf4516/header.jpg?t=1768303991" class="d-block w-100" alt="...">
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100" style="background-color: #2a475e;">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg"
+                            class="card-img-top" alt="Cyberpunk">
+                        <div class="card-body p-3">
+                            <h6 class="card-title text-white">Cyberpunk 2077</h6>
+                            <p class="small text-secondary mb-2">¡Oferta disponible ahora!</p>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-success text-white px-2 py-1 fw-bold me-2">-60%</div>
+                                <div class="text-secondary text-decoration-line-through small me-2">59,99€</div>
+                                <div class="fs-5 text-white">23,99€</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+
+                <div class="col-md-4 d-flex flex-column gap-3">
+                    <div class="card border-0 shadow-sm" style="background-color: #2a475e; flex: 1;">
+                        <div class="row g-0 h-100 align-items-center">
+                            <div class="col-5 h-100">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg"
+                                    class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Rust">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body p-2">
+                                    <h6 class="card-title text-white mb-1" style="font-size: 14px;">Rust</h6>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-success text-white px-1 py-0 fw-bold small me-2">-33%</div>
+                                        <div class="text-white small">26,79€</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm" style="background-color: #2a475e; flex: 1;">
+                        <div class="row g-0 h-100 align-items-center">
+                            <div class="col-5 h-100">
+                                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/header.jpg"
+                                    class="img-fluid rounded-start h-100" style="object-fit: cover;" alt="Call of Duty">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body p-2">
+                                    <h6 class="card-title text-white mb-1" style="font-size: 14px;">Call of Duty: BO6
+                                    </h6>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-success text-white px-1 py-0 fw-bold small me-2">-15%</div>
+                                        <div class="text-white small">59,49€</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        </section>
 
+        <section class="mb-5">
+            <h5 class="text-uppercase mb-3" style="letter-spacing: 2px; font-size: 14px; color: #fff;">Explorar por
+                categorías</h5>
 
+            <div id="categoriesCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                <div class="carousel-inner">
 
+                    <div class="carousel-item active">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #4c6c8c 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-controller fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">ACCIÓN</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #a44d31 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-compass fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">AVENTURA</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #3e8d62 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-shield-shaded fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">ROL (RPG)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #8c4c8c 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-cpu fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">ESTRATEGIA</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #d9ab26 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-trophy fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">DEPORTES</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #31a4a4 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-ghost fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">TERROR</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #a43152 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-person-video3 fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">SIMULACIÓN</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card border-0 text-white text-center shadow-lg h-100 overflow-hidden"
+                                    style="background: linear-gradient(0deg, #1f2d3b 0%, #6c4c8c 100%); min-height: 150px;">
+                                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                        <i class="bi bi-puzzle fs-1 mb-2"></i>
+                                        <h6 class="fw-bold">PUZZLES</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#categoriesCarousel"
+                    data-bs-slide="prev" style="width: 5%; background: rgba(0,0,0,0.3); border-radius: 4px;">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#categoriesCarousel"
+                    data-bs-slide="next" style="width: 5%; background: rgba(0,0,0,0.3); border-radius: 4px;">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
     </main>
+    <footer class="py-5 mt-5" style="background-color: #000000; color: #8f98a0; font-size: 12px;">
+        <div class="container">
+            <hr style="border-top: 1px solid #363c44; opacity: 1;" class="mb-4">
 
-    <footer>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
+            <div class="row align-items-center">
+                <div class="col-md-2 d-flex justify-content-start gap-3 mb-3 mb-md-0">
+                    <img src="https://www.valvesoftware.com/images/about/valve_logo.png" alt="Valve" width="80"
+                        style="filter: brightness(0.7);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam"
+                        width="25" style="filter: grayscale(1) opacity(0.5);">
+                </div>
+
+                <div class="col-md-10">
+                    <p class="mb-1">
+                        © 2026 Valve Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen
+                        a
+                        sus respectivos dueños en EE. UU. y otros países.
+                    </p>
+                    <p class="mb-0">
+                        Todos los precios incluyen IVA (donde sea aplicable).&nbsp;
+                        <a href="#" class="text-decoration-none text-light opacity-75">Política de
+                            Privacidad</a>|&nbsp;&nbsp;
+                        <a href="#" class="text-decoration-none text-light opacity-75">Información
+                            legal</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#"
+                            class="text-decoration-none text-light opacity-75">Accesibilidad</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#" class="text-decoration-none text-light opacity-75">Acuerdo de Suscriptor a
+                            Steam</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#"
+                            class="text-decoration-none text-light opacity-75">Reembolsos</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#" class="text-decoration-none text-light opacity-75">Cookies</a>
+                    </p>
+                </div>
+            </div>
+
+            <hr style="border-top: 1px solid #363c44; opacity: 1;" class="my-4">
+
+            <div class="d-flex flex-wrap gap-2 justify-content-start">
+                <a href="#" class="text-decoration-none text-light opacity-75">Acerca de Valve</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Empleo</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Steamworks</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Distribución de Steam</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Soporte</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Reciclaje</a> |
+                <a href="#" class="text-decoration-none text-light opacity-75">Tarjetas regalo</a>
+            </div>
+
+            <div class="mt-3 d-flex gap-3">
+                <a href="#" class="text-light opacity-50"><i class="bi bi-facebook"></i> Steam</a>
+                <a href="#" class="text-light opacity-50"><i class="bi bi-twitter-x"></i> @steam</a>
+            </div>
+        </div>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </html>
